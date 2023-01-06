@@ -1,30 +1,19 @@
 namespace SplitStringsExercise;
 
-public class SplitStrings
+public static class SplitStrings
 {
     public static string[] Solution(string str)
     {
-        var pieces = new string[(str.Length + 1) / 2];
-        string piece = "";
-        int count = 0;
-        foreach (char c in str)
+        if (str.Length % 2 != 0)
         {
-            if (piece.Length < 2)
-            {
-                piece += c;
-            }
-            else
-            {
-                pieces[count] = piece;
-                count++;
-                piece = c.ToString();
-            }
+            str += "_";
         }
-        if (piece.Length < 2)
+
+        var pieces = new List<string>();
+        for (int i = 0; i < str.Length; i += 2)
         {
-            piece += '_';
+            pieces.Add(str[i].ToString() + str[i + 1]);
         }
-        pieces[count] = piece;
-        return pieces;
+        return pieces.ToArray();
     }
 }
