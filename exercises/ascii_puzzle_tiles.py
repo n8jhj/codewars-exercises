@@ -2,7 +2,19 @@
 
 
 def puzzle_tiles(width: int, height: int) -> str:
-    assert width > 0 and height > 0, "Both width and height must be > 1"
+    """Prints puzzle tiles to stdout.
+
+    Args:
+        width: Number of tiles to print horizontally.
+        height: Number of tiles to print vertically.
+
+    Returns:
+        String representation of puzzle tiles.
+
+    Raises:
+        AssertionError: Width or height given with value < 1
+    """
+    assert width > 0 and height > 0, "Width or height given with value < 1"
     lines: list[str] = []
     lines.append("  " + " _( )__" * width)
     for i in range(height):
