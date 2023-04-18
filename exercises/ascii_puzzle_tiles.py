@@ -15,17 +15,19 @@ def puzzle_tiles(width: int, height: int) -> str:
         AssertionError: Width or height given with value < 1
     """
     assert width > 0 and height > 0, "Width or height given with value < 1"
-    lines: list[str] = []
-    lines.append("  " + " _( )__" * width)
-    for i in range(height):
-        if i % 2 == 0:
-            lines.append(" _|" + "     _|" * width)
-            lines.append("(_" + "   _ (_" * width)
-        else:
-            lines.append(" |_" + "     |_" * width)
-            lines.append("  _)" + " _   _)" * width)
-        lines.append(" |" + "__( )_|" * width)
-    return "\n".join(lines)
+
+    def f():
+        yield "  " + " _( )__" * width
+        for i in range(height):
+            if i % 2 == 0:
+                yield " _|" + "     _|" * width
+                yield "(_" + "   _ (_" * width
+            else:
+                yield " |_" + "     |_" * width
+                yield "  _)" + " _   _)" * width
+            yield " |" + "__( )_|" * width
+
+    return "\n".join(f())
 
 
 if __name__ == "__main__":
