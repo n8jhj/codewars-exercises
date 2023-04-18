@@ -5,7 +5,7 @@ description = "Exercises I've done on CodeWars.com."
 authors = ["Nathaniel Jones <nathaniel-j-jones@proton.me>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "codewars_exercises"}]
+packages = [{ include = "codewars_exercises" }]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -13,6 +13,10 @@ python = "^3.10"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.3.0"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.3.1"
 
 [build-system]
 requires = ["poetry-core"]

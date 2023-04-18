@@ -16,25 +16,5 @@ def puzzle_tiles(width: int, height: int) -> str:
     return "\n".join(lines)
 
 
-RESULT_4_3: str = """
-   _( )__ _( )__ _( )__ _( )__
- _|     _|     _|     _|     _|
-(_   _ (_   _ (_   _ (_   _ (_
- |__( )_|__( )_|__( )_|__( )_|
- |_     |_     |_     |_     |_
-  _) _   _) _   _) _   _) _   _)
- |__( )_|__( )_|__( )_|__( )_|
- _|     _|     _|     _|     _|
-(_   _ (_   _ (_   _ (_   _ (_
- |__( )_|__( )_|__( )_|__( )_|
-"""
-
-
-def test_4_3():
-    assert "\n" + puzzle_tiles(4, 3) + "\n" == RESULT_4_3
-
-
 if __name__ == "__main__":
-    test_4_3()
-    # print(puzzle_tiles(4, 3))
-    # print(RESULT_4_3)
+    print(puzzle_tiles(4, 3))
